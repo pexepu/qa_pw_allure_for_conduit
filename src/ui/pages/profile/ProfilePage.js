@@ -13,24 +13,24 @@ export class ProfilePage {
 
   async step(title, stepToRun) {
       return await testStep(title, stepToRun, this.userId);
-    };
+    }
 
 
 
   async assertProfileImage(url) {
-        await this.step(`Assert the 'Profile picture' has correct url'`, async () => {
+        await this.step(`Assert the 'Profile picture' has correct url`, async () => {
           await expect(this.profileImage).toHaveAttribute('src', url);
         });
       }
   
     async assertProfileUsernameField(username) {
-        await this.step(`Assert the 'Username' has correct username'`, async () => {
+        await this.step(`Assert the 'Username' has correct username`, async () => {
           await expect(this.profileUsername).toHaveText(username);
         });
       }
   
     async assertProfileBio(bio) {
-        await this.step(`Assert the 'Short bio about you' has correct bio'`, async () => {
+        await this.step(`Assert the 'Short bio about you' has correct bio`, async () => {
           await expect(this.profileBio).toHaveText(bio);
         });
       }

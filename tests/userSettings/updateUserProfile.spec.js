@@ -73,7 +73,7 @@ test('Update email from settings', async ({
 
 
 
-test('Update password from setting', async ({ 
+test('Update password from settings', async ({ 
   browser, 
   userSettings, 
   user,

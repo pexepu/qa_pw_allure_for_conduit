@@ -7,7 +7,7 @@ export class HomePage {
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
     this.settingsLink = page.getByRole('link', { name: 'Settings' });
-    this.singUpLink = page.getByRole('link', { name: 'Sign in' });
+    this.signInLink = page.getByRole('link', { name: 'Sign in' });
   }
 
   async step(title, stepToRun) {
@@ -32,9 +32,9 @@ export class HomePage {
     });
   }
 
-  async assertsingUpLinkIsVisible() {
-    await this.step(`Assert the 'Sing Up' link is visible`, async () => {
-      await expect(this.singUpLink).toBeVisible();
+  async assertsignInLinkIsVisible() {
+    await this.step(`Assert the 'Sing In' link is visible`, async () => {
+      await expect(this.signInLink).toBeVisible();
     });
   }
 }

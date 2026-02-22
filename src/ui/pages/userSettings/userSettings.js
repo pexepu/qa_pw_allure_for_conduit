@@ -9,16 +9,13 @@ export class UserSettings {
     this.bioSettingsField = page.getByPlaceholder('Short bio about you');
     this.emailSettingsField = page.getByPlaceholder('Email');
     this.newPasswordSettingsField = page.getByPlaceholder('New Password');
-    this.updateSettingsButton = page.getByRole('button', 
-      { name: 'Update Settings' })
-      .first();
     this.settingsLink = page.getByRole('link', { name: 'Settings' });
     this.logOutButton = page.getByRole('button', { name: 'Or click here to logout.' });
   }
 
   async step(title, stepToRun) {
       return await testStep(title, stepToRun, this.userId);
-    };
+    }
 
   async fillProfilePictureSettingsField(url) {
     await this.step(`Fill the 'Profile picture' field`, async () => {
@@ -39,7 +36,7 @@ export class UserSettings {
   }
 
   async fillEmailSettingsField(email) {
-    await this.step(`Fill the 'Email`, async () => {
+    await this.step(`Fill the 'Email' field`, async () => {
       await this.emailSettingsField.fill(email);
     });
   }

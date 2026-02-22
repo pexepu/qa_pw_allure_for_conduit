@@ -4,9 +4,8 @@ import { ProfilePage } from '../../src/ui/pages/profile/ProfilePage';
 
 
 export const test = base.extend<{
-  userSettings;
-  profilePage;
-  
+  userSettings: UserSettings;
+  profilePage: ProfilePage;
 }>({
   userSettings: async ({ page }, use) => {
     const userSettings = new UserSettings(page);

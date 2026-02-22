@@ -13,7 +13,7 @@ test('Log out user', async ({
   await signUpUser(page, user);
   await homePage.clickSettingsLink();
   await userSettings.clickLogOutButton();
-  await homePage.assertsingUpLinkIsVisible();
+  await homePage.assertsignInLinkIsVisible();
 
   
 });
