@@ -32,8 +32,8 @@ export class HomePage {
     });
   }
 
-  async assertsignInLinkIsVisible() {
-    await this.step(`Assert the 'Sing In' link is visible`, async () => {
+  async assertSignInLinkIsVisible() {
+    await this.step(`Assert the 'Sign in' link is visible`, async () => {
       await expect(this.signInLink).toBeVisible();
     });
   }

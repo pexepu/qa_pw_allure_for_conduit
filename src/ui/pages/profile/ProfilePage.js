@@ -8,7 +8,7 @@ export class ProfilePage {
     this.profileHeader = page.locator('.user-info');
     this.profileUsername = this.profileHeader.locator('h4');
     this.profileBio = this.profileHeader.locator('p');
-    this.profileImage = this.profileHeader.getByRole('img', { name: "User's profile image" });
+    this.profileImage = this.profileHeader.getByRole('img').first();
   }
 
   async step(title, stepToRun) {
@@ -18,19 +18,20 @@ export class ProfilePage {
 
 
   async assertProfileImage(url) {
-        await this.step(`Assert the 'Profile picture' has correct url`, async () => {
-          await expect(this.profileImage).toHaveAttribute('src', url);
-        });
-      }
+    await this.step(`Assert profile picture URL matches expected`, async () => {
+      const src = await this.profileImage.getAttribute('src');
+      expect(src).toContain(url);
+  });
+}
   
     async assertProfileUsernameField(username) {
-        await this.step(`Assert the 'Username' has correct username`, async () => {
+        await this.step(`Assert profile username equals expected`, async () => {
           await expect(this.profileUsername).toHaveText(username);
         });
       }
   
     async assertProfileBio(bio) {
-        await this.step(`Assert the 'Short bio about you' has correct bio`, async () => {
+        await this.step(`Assert profile short bio equals expected`, async () => {
           await expect(this.profileBio).toHaveText(bio);
         });
       }

@@ -11,11 +11,12 @@ export class UserSettings {
     this.newPasswordSettingsField = page.getByPlaceholder('New Password');
     this.settingsLink = page.getByRole('link', { name: 'Settings' });
     this.logOutButton = page.getByRole('button', { name: 'Or click here to logout.' });
+    this.updateSettingsButton = page.getByRole('button', { name: 'Update Settings' });
   }
 
   async step(title, stepToRun) {
       return await testStep(title, stepToRun, this.userId);
-    }
+    };
 
   async fillProfilePictureSettingsField(url) {
     await this.step(`Fill the 'Profile picture' field`, async () => {
